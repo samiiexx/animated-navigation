@@ -1,0 +1,115 @@
+/**
+ * Copyright 2021 sfchi
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+ 
+
+ *{
+    box-sizing: border-box;
+}
+
+ body {
+     font-family: 'Muli', sans-serif;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     margin: 0;
+     background-image: linear-gradient(to bottom, #ffe1d0 0%, #ffe1d0 50%, #f9c752 50%, #f9c752 100%);
+ }
+
+ .nav {
+     background-color: #fff;
+     padding: 20px;
+     width: 80px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 3px;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+     transition: width 0.6s linear;
+ }
+
+ .nav.active {
+     width: 400px;
+ }
+
+ .lists {
+     display: flex;
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     width: 0;
+     transition: width 0.6s linear;
+ }
+
+ .nav.active .lists{
+     width: 100%;
+ }
+
+ .nav-item {
+     transform: rotateY(0deg);
+     opacity: 0;
+     transition: transform 0.6s linear, opacity 0.6s duration;
+ }
+
+ .nav.active .nav-item {
+     transform: rotateY(360deg);
+     opacity: 1;
+ }
+
+ .nav-link {
+     position: relative;
+     text-decoration: none;
+     color: #000;
+     padding: 0 10px;
+ }
+
+ .icon {
+     background-color: #fff;
+     border: 0;
+     cursor: pointer;
+     padding: 0;
+     position: relative;
+     height: 30px;
+     width: 30px;
+ }
+
+ .icon:focus {
+     outline: 0;
+ }
+
+ .line {
+     background-color: #f9c752;
+     height: 2px;
+     position: absolute;
+     width: 20px;
+     top: 10px;
+     left: 5px;
+     transition: transform 0.6s linear;
+ }
+
+ .line-2 {
+     top: auto;
+     bottom: 10px;
+ }
+
+ .nav.active .line-1 {
+     transform: rotate(-765deg) translateY(5.5px);
+ }
+
+ .nav.active .line-2 {
+     transform: rotate(765deg) translateY(-5.5px);
+ }
